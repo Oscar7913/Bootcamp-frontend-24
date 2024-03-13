@@ -1,43 +1,59 @@
-const Cinema = class{
-    constructor(rows, seatsPerRow) {
-        this.rows = rows;
-        this.seatsPerRow = seatsPerRow;
-        this.occupiedSeats = new Array();
-    }
+const Cinema = class {
+  constructor(rows, seatsPerRow) {
+    this.rows = rows;
+    this.seatsPerRow = seatsPerRow;
+    this.occupiedSeats = new Array();
+  }
 
-    freeSeats(){
-        console.log( this.seatsPerRow * this.rows-this.occupiedSeats.length);
-    }
-    occupiedSeats(){
-        console.log( this.occupiedSeats.length);
-    }
+  freeSeats() {
+    console.log(this.seatsPerRow * this.rows - this.occupiedSeats.length);
+  }
 
-    reserveSeat(row, number){
-        const seat = new Seat(3,5)
-        if(this.occupiedSeats.find(seat => seat.number ===number && seat.numberRow ===row)){
-            console.log('This seat is already occupied');
-            return;
-        }
-        seat.setOccupation();
-        this.occupiedSeats.push(seat);
-        console.log('Your seat is reserved');
-    }
-}
+  occupiedSeats() {
+    console.log(this.occupiedSeats.length);
+  }
 
-const Seat = class{
-    constructor(numberRow, number) {
-        this.number = number;
-        this.numberRow = numberRow;
-        this.occupied = false;
-    }
+  showSeatStatus() {
+    console.log(
+      `There are ${
+        this.seatsPerRow * this.rows - this.occupiedSeats.length
+      } free seats and ${this.occupiedSeats.length} that are already occupied`
+    );
+  }
 
-    setOccupation(){
-        this.occupied = true;
+  reserveSeat(row, number) {
+    if (row <= this.rows && number <= this.seatsPerRow) {
+      if (
+        this.occupiedSeats.find(
+          (seat) => seat.number === number && seat.numberRow === row
+        )
+      ) {
+        console.log('This seat is already occupied');
+        return;
+      }
+      const seat = new Seat(row, number);
+      seat.setOccupation();
+      this.occupiedSeats.push(seat);
+      console.log('Your seat is reserved');
+      return;
     }
+    console.log('This seat number does not exist');
+  }
+};
 
-}
-const cinema = new Cinema(5,10);
-cinema.freeSeats();
-cinema.reserveSeat(3,5)
-cinema.freeSeats();
-cinema.reserveSeat(3,5)
+const Seat = class {
+  constructor(numberRow, number) {
+    this.number = number;
+    this.numberRow = numberRow;
+    this.occupied = false;
+  }
+
+  setOccupation() {
+    this.occupied = !this.occupied;
+  }
+};
+const cinema = new Cinema(5, 10);
+cinema.showSeatStatus();
+cinema.reserveSeat(3, 10);
+cinema.showSeatStatus();
+cinema.reserveSeat(3, 10);
