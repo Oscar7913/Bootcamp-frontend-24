@@ -22,7 +22,7 @@ async function loadJson(url) {
 
 async function demoGithubUserAsync(){
     try {
-        let name = prompt('Enter a name?', 'vanimar');
+        let name = prompt('Enter a name?', 'fabpot');
         const loadJsonAsync =  await loadJson(`https://api.github.com/users/${name}`);
         alert(`Full name: ${loadJsonAsync.name}.`);
         return user
@@ -35,4 +35,4 @@ async function demoGithubUserAsync(){
           }
     }
 }
-demoGithubUserAsync();oti
+demoGithubUserAsync();
