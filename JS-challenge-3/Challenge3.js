@@ -22,17 +22,17 @@ async function loadJson(url) {
 
 async function demoGithubUserAsync(){
     try {
-        let name = prompt('Enter a name?', 'fabpot');
+        let name = 'Oscar7913';
         const loadJsonAsync =  await loadJson(`https://api.github.com/users/${name}`);
-        alert(`Full name: ${loadJsonAsync.name}.`);
-        return user
+        console.log(`Full name: ${loadJsonAsync.name}.`);
+        // return user
     } catch (error) {
-        if (error instanceof HttpError && err.response.status == 404) {
-            alert('No such user, please reenter.');
-            return demoGithubUser();
-          } else {
-            throw err;
-          }
+        if (error instanceof HttpError) {
+            console.log('No such user, please reenter.'); 
+            // return demoGithubUserA();
+        } else {
+        throw error;
+        }
     }
 }
 demoGithubUserAsync();
