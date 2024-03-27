@@ -2,35 +2,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CardId</title>
+    <title>Card</title>
   </head>
   <style>
     .outer-box {
-      border: 1px solid black;
+      border: 3px solid #08b0da;
       display: flex;
-      background-color: aqua;
+      background-color: rgb(14, 37, 167);
       flex-direction: column;
-      align-content: space-around;
-      gap:10px;
-  
+      gap: 1vh;
+      justify-content: space-evenly;
+      margin-right: 300px;
     }
-    .inner-box {
-      border: 1px solid red;
-      background-color: antiquewhite;
+    .first-box {
+      border: 2px solid #08b0da;
+      flex-basis: 50px;
+      margin: 15px 15px 0 15px;
     }
-    .margin-container-box{
-      margin: 10px;
+    .second-box {
+      border: 2px solid #08b0da;
+      flex-basis: 25px;
+      margin: 0 25px;
+    }
+    .third-box {
+      border: 2px solid #cc12bd;
+      flex-basis: 200px;
+      margin: 0 25px;
     }
 
+    .container-box {
+      border: 1px solid #08b0da;
+      margin: 0 15px 5px 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    .fourth-box {
+      border: 1px solid #cc12bd;
+      flex-basis: 45px;
+      margin: 5px;
+    }
+    .fifth-box {
+      border: 1px solid #cc12bd;
+      flex-basis: 25px;
+      margin: 5px;
+    }
   </style>
   <body>
     <div class="outer-box">
-      <div class="inner-box">1</div>
-      <div class="inner-box">1</div>
-      <div class="inner-box">1</div>
-      <div class="outer-box margin-container-box">
-        <div class="inner-box">1</div>
-        <div class="inner-box">1</div>
+      <div class="first-box">1</div>
+      <div class="second-box">2</div>
+      <div class="third-box">3</div>
+      <div class="container-box">
+        <div class="fourth-box">4</div>
+        <div class="fifth-box">5</div>
       </div>
     </div>
   </body>
