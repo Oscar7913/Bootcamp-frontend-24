@@ -1,0 +1,47 @@
+.outer-box {
+    border: 3px solid #08b0da;
+    display: flex;
+    background-color: rgb(14, 37, 167);
+    flex-direction: column;
+    gap: 1vh;
+    /*no funciona*/
+    /* gap:10%; */ 
+    justify-content: space-evenly;
+    margin-right: 300px;
+  }
+  .first-box {
+    border: 2px solid #08b0da;
+    flex-basis: 25px;
+    /* flex-basis: 100%; */
+    /* flex-grow:5; */
+    /* flex: 3; */
+    margin: 15px 15px 0 15px;
+  }
+  .second-box {
+    border: 2px solid #08b0da;
+    flex-basis: 25px;
+    margin: 0 25px;
+  }
+  .third-box {
+    border: 2px solid #cc12bd;
+    flex-basis: 200px;
+    margin: 0 25px;
+  }
+
+  .container-box {
+    border: 1px solid #08b0da;
+    margin: 0 15px 5px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .fourth-box {
+    border: 1px solid #cc12bd;
+    flex-basis: 45px;
+    margin: 5px;
+  }
+  .fifth-box {
+    border: 1px solid #cc12bd;
+    flex-basis: 25px;
+    margin: 5px;
+  }
+  /* flex-grow instead of flex-basis */
